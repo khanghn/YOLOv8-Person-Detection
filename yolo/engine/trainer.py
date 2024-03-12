@@ -324,6 +324,7 @@ class BaseTrainer:
                
                 # Forward
                 with torch.cuda.amp.autocast(self.amp):
+                    if type(batch) is dict: continue
                     batch = self.preprocess_batch(batch)
                     self.loss, self.loss_items = self.model(batch)
                     if RANK != -1:
