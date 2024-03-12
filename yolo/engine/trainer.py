@@ -688,7 +688,7 @@ def check_amp(model):
     try:
         from yolo.engine.model import YOLO
       
-        assert amp_allclose(YOLO('yolov8n.pt'), im)
+        assert amp_allclose(YOLO('yolov8m.yaml'), im)
         LOGGER.info(f'{prefix}checks passed ✅')
     except ConnectionError:
         LOGGER.warning(f"{prefix}checks skipped ⚠️, offline and unable to download YOLOv8n. Setting 'amp=True'.")
