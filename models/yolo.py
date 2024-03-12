@@ -60,7 +60,7 @@ class V8_Detect(nn.Module):
         self.dfl = DFL(self.reg_max) if self.reg_max > 1 else nn.Identity()
 
     def forward(self, x):
-        shape = x[0].shape  # BCHW
+        shape = x[0].shape  # BCHW  
         for i in range(self.nl):
             x[i] = torch.cat((self.cv2[i](x[i]), self.cv3[i](x[i])), 1)
         if self.training:
