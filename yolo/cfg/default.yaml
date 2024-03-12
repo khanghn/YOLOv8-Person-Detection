@@ -10,7 +10,7 @@ data: data/coco_crow.yaml   # path to data file, i.e. i.e. coco128.yaml
 pretrained_wts: yolov8m.yaml  # if your need custom model ,provide a pretrained weights
 epochs: 100  # number of epochs to train for
 patience: 50  # epochs to wait for no observable improvement for early stopping of training
-batch: 1  # number of images per batch (-1 for AutoBatch)
+batch: -1  # number of images per batch (-1 for AutoBatch)
 imgsz: 640  # size of input images as integer or w,h
 imgsz: 640  # size of input images as integer or w,h
 save: True  # save train checkpoints and predict results
