@@ -1,0 +1,4 @@
+train: /kaggle/input/coco2017-crowhuman-person/coco_crow/train/images
+val: /kaggle/input/coco2017-crowhuman-person/coco_crow/val/images
+nc: 1
+names: ['person']
