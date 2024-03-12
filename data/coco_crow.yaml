@@ -1,0 +1,10 @@
+path: /kaggle/input/coco2017-crowhuman-person/coco_crow  # dataset root dir
+train: train/images  # train images 
+val: val/images  # val images 
+test:  # test images (optional)
+
+# Classes
+names:
+  0: person
+
+nc : 1
