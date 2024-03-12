@@ -30,7 +30,7 @@ class YOLO:
     A python interface which emulates a model-like behaviour by wrapping trainers.
     """
 
-    def __init__(self, model:Union[str,Path]= 'yolov8n.pt', task=None, session=None) -> None:
+    def __init__(self, model:Union[str,Path], task=None, session=None) -> None:
         """
     YOLO (You Only Look Once) object detection model.
 
