@@ -44,6 +44,6 @@ yolo task=detect    mode=train   data=<data.yaml path>      model=yolov8n.pt    
                          export                             yolov8n.pt        format=onnx  args...
 ```
 ### 3.2 Custom models
-Setup the model configs in `yolo/cfg/default.yaml` and dataset configs in `data/coco_crow.yaml`
+Setup the model configs in `ultra/cfg/models/v8/yolov8.yaml` and dataset configs in `ultra/cfg/datasets/coco_crow.yaml`
 
 `python train_v8.py`
