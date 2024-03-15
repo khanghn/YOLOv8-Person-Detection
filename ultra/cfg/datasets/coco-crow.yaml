@@ -1,7 +1,0 @@
-#Datasets
-path: /kaggle/input/coco2017-crowhuman-person/coco_crow
-train: /kaggle/input/coco2017-crowhuman-person/coco_crow/train/images
-val: /kaggle/input/coco2017-crowhuman-person/coco_crow/val/images
-# Classes
-names:
-  0: person
