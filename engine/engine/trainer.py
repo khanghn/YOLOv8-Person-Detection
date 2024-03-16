@@ -661,10 +661,10 @@ class BaseTrainer:
             self.ema.ema.load_state_dict(ckpt["ema"].float().state_dict())  # EMA
             self.ema.updates = ckpt["updates"]
         if self.resume:
-            assert start_epoch > 0, (
-                f"{self.args.model} training to {self.epochs} epochs is finished, nothing to resume.\n"
-                f"Start a new training without resuming, i.e. 'yolo train model={self.args.model}'"
-            )
+            # assert start_epoch > 0, (
+            #     f"{self.args.model} training to {self.epochs} epochs is finished, nothing to resume.\n"
+            #     f"Start a new training without resuming, i.e. 'yolo train model={self.args.model}'"
+            # )
             LOGGER.info(
                 f"Resuming training from {self.args.model} from epoch {start_epoch + 1} to {self.epochs} total epochs"
             )

@@ -65,12 +65,15 @@ class Conv(nn.Module):
                         nn.Conv2d(c1, c1, k, 1, 0, groups=c1, dilation=d, bias=False),
                         nn.Conv2d(c1, c2, 1, s, autopad(k, p, d), groups=g, dilation=d, bias=False)
                     )
+        self.depthwise = nn.Conv2d(c1, c1, k, 1, 0, groups=c1, dilation=d, bias=False),
+        self.pointwise = nn.Conv2d(c1, c2, 1, s, autopad(k, p, d), groups=g, dilation=d, bias=False)
         self.bn = nn.BatchNorm2d(c2)
         self.act = self.default_act if act is True else act if isinstance(act, nn.Module) else nn.Identity()
 
     def forward(self, x):
         """Apply depthwise separatable convolution, batch normalization and activation to input tensor."""
         return self.act(self.bn(self.conv(x)))
+        # return self.act(self.bn(self.pointwise(self.depthwise(x))))
 
     def forward_fuse(self, x):
         """Perform transposed convolution of 2D data."""

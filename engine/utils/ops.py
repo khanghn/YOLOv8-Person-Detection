@@ -169,7 +169,7 @@ def non_max_suppression(
     multi_label=False,
     labels=(),
     max_det=300,
-    nc=0,  # number of classes (optional)
+    nc=1,  # number of classes (optional)
     max_time_img=0.05,
     max_nms=30000,
     max_wh=7680,
@@ -206,7 +206,7 @@ def non_max_suppression(
             shape (num_boxes, 6 + num_masks) containing the kept boxes, with columns
             (x1, y1, x2, y2, confidence, class, mask1, mask2, ...).
     """
-
+    iou_thres=0.2
     # Checks
     assert 0 <= conf_thres <= 1, f"Invalid Confidence threshold {conf_thres}, valid values are between 0.0 and 1.0"
     assert 0 <= iou_thres <= 1, f"Invalid IoU {iou_thres}, valid values are between 0.0 and 1.0"
@@ -217,6 +217,7 @@ def non_max_suppression(
     nc = nc or (prediction.shape[1] - 4)  # number of classes
     nm = prediction.shape[1] - nc - 4
     mi = 4 + nc  # mask start index
+    conf_thres=3e-3
     xc = prediction[:, 4:mi].amax(1) > conf_thres  # candidates
 
     # Settings

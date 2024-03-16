@@ -10,7 +10,7 @@ data: # (str, optional) path to data file, i.e. coco128.yaml
 epochs: 100 # (int) number of epochs to train for
 time: # (float, optional) number of hours to train for, overrides epochs if supplied
 patience: 100 # (int) epochs to wait for no observable improvement for early stopping of training
-batch: 16 # (int) number of images per batch (-1 for AutoBatch)
+batch: 1 # (int) number of images per batch (-1 for AutoBatch)
 imgsz: 640 # (int | list) input images size as int for train and val modes, or list[w,h] for predict and export modes
 save: True # (bool) save train checkpoints and predict results
 save_period: -1 # (int) Save checkpoint every x epochs (disabled if < 1)
@@ -29,7 +29,7 @@ single_cls: False # (bool) train multi-class data as single-class
 rect: False # (bool) rectangular training if mode='train' or rectangular validation if mode='val'
 cos_lr: False # (bool) use cosine learning rate scheduler
 close_mosaic: 10 # (int) disable mosaic augmentation for final epochs (0 to disable)
-resume: False # (bool) resume training from last checkpoint
+resume: True # (bool) resume training from last checkpoint
 amp: True # (bool) Automatic Mixed Precision (AMP) training, choices=[True, False], True runs AMP check
 fraction: 1.0 # (float) dataset fraction to train on (default is 1.0, all images in train set)
 profile: False # (bool) profile ONNX and TensorRT speeds during training for loggers
@@ -67,9 +67,10 @@ embed: # (list[int], optional) return feature vectors/embeddings from given laye
 # Visualize settings ---------------------------------------------------------------------------------------------------
 show: False # (bool) show predicted images and videos if environment allows
 save_frames: False # (bool) save predicted individual video frames
-save_txt: False # (bool) save results as .txt file
-save_conf: False # (bool) save results with confidence scores
-save_crop: False # (bool) save cropped images with results
+save_txt: True # (bool) save results as .txt file
+save_dir: /home/nguyenkhang/Documents/YOLOv8/datasets/coco_crow/results/
+save_conf: True # (bool) save results with confidence scores
+save_crop: True # (bool) save cropped images with results
 show_labels: True # (bool) show prediction labels, i.e. 'person'
 show_conf: True # (bool) show prediction confidence, i.e. '0.99'
 show_boxes: True # (bool) show prediction boxes
