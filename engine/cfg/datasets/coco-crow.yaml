@@ -5,9 +5,6 @@ val: /kaggle/input/coco2017-crowhuman-person/coco_crow/val/images
 # path: /home/nguyenkhang/Documents/YOLOv8/datasets/coco_crow
 # train: images/train
 # val: images/val
-# path: /home/nguyenkhang/Documents/YOLOv8/datasets/coco_crow
-# train: train/images
-# val: val/images
 # Classes
 names:
   0: person
