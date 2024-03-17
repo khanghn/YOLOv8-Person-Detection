@@ -47,3 +47,8 @@ yolo task=detect    mode=train   data=<data.yaml path>      model=yolov8n.pt    
 Setup the model configs in `ultra/cfg/models/v8/yolov8.yaml` and dataset configs in `ultra/cfg/datasets/coco_crow.yaml`
 
 `python train_v8.py`
+
+## 4. Inference
+To export prediction results in (*.txt) format with (class, x_min, y_min, x_max, y_max, confidence_score).
+
+`python predict.py`

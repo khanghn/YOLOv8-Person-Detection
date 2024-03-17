@@ -8,7 +8,7 @@ from engine.models.yolo.detect import DetectionPredictor
 
 
 args = dict(model='/home/nguyenkhang/Downloads/best (1).pt', 
-            source='/home/nguyenkhang/Documents/YOLOv8/datasets/coco_crow/images/val',
+            source='/home/nguyenkhang/Documents/YOLOv8/datasets/coco_crow/val/images',
             save_dir= '/home/nguyenkhang/Documents/YOLOv8/datasets/coco_crow/results/'
         )
 predictor = DetectionPredictor(overrides=args)
